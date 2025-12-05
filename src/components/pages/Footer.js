@@ -1,4 +1,5 @@
 import React from 'react';
+import { API_URL } from '../../api';
 
 const Footer = ({ storeInfo }) => (
   <footer className="bg-gray-800 text-white mt-12">

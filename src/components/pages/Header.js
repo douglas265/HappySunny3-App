@@ -1,5 +1,6 @@
 import React from 'react';
 import { LogIn, LogOut, Menu, X, Settings } from 'lucide-react';
+import { API_URL } from '../../api';
 
 const Header = ({ user, navigate, handleLogout, isMobileMenuOpen, setIsMobileMenuOpen }) => {
     const NavLinks = ({ isMobile = false }) => (

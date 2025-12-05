@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { LogIn, LogOut, Menu, X, Settings, Sparkles, Calendar, Heart, Scissors, Droplet, Clock, User, DollarSign, Check, ChevronLeft, ChevronRight, Mail, KeyRound, UserPlus, Tag, XCircle, Save, Info, MapPin, Edit, Trash2, PlusCircle, Wrench } from 'lucide-react';
+import AllReservationsCalendar from './AllReservationsCalendar';
+import CustomReservationForm from './CustomReservationForm';
+import ManageServicesPage from './ManageServicesPage';
+import ManageUsersPage from './ManageUsersPage';
+import { API_URL } from '../../api';
 
 function EmployerPortal({ user, services, therapists, storeInfo, onServicesUpdate, onUsersUpdate }) {
     const [activeTab, setActiveTab] = useState('allReservations');
