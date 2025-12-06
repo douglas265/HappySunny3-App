@@ -8,7 +8,7 @@ import Footer from './components/pages/Footer';
 
 // Page Components
 import HomePage from './components/pages/HomePage';
-import ServicesPage from './components/pages/SerevicesPage'; // Note: Keeps original filename spelling
+import ServicesPage from './components/pages/ServicesPage'; 
 import BookingPage from './components/pages/BookingPage';
 import LoginPage from './components/pages/LoginPage';
 import SignUpPage from './components/pages/SignUpPage';
@@ -18,6 +18,7 @@ import ResetPasswordPage from './components/pages/ResetPasswordPage';
 import EmployeePortal from './components/pages/EmployeePortal';
 import EmployerPortal from './components/pages/EmployerPortal';
 import SettingsPage from './components/pages/SettingsPage';
+import StoreHoursEditor from './components/pages/StoreHoursEditor'; // Add new import here
 
 
 // Centralized API URL
@@ -165,6 +166,3 @@ export default function App() {
     </div>
   );
 }
-
-// --- Reusable Layout Components ---
-

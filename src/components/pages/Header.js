@@ -19,6 +19,7 @@ const Header = ({ user, navigate, handleLogout, isMobileMenuOpen, setIsMobileMen
             </button>
           </>
         ) : (
+          // FIX: Changed navigation target from 'book' to 'login'
           <button onClick={() => navigate('login')} className="flex items-center bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors">
             <LogIn className="mr-2 h-4 w-4" /> Login / Sign Up
           </button>

@@ -49,4 +49,4 @@ function LoginPage({ onLogin, navigate }) {
     );
 }
 
-export default BookingPage;
+export default LoginPage; // <-- FIXED EXPORT

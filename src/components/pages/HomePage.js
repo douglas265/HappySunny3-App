@@ -3,6 +3,38 @@ import { LogIn, LogOut, Menu, X, Settings, Sparkles, Calendar, Heart, Scissors, 
 import { API_URL } from '../../api';
 
 function HomePage({ navigate, storeInfo }) {
+
+  // Helper function to format HH:MM:SS string to 12-hour AM/PM string
+  // This version strictly parses the HH and MM parts from the beginning of the string
+  // to avoid timezone interpretation by Date objects.
+  const formatTime = (timeString) => {
+    if (!timeString) return 'N/A';
+    
+    try {
+      // 1. Extract HH:MM from the string (e.g., "09:00:00.0000000" -> "09:00")
+      const timeParts = timeString.substring(0, 5).split(':');
+      let hours = parseInt(timeParts[0], 10);
+      const minutes = timeParts[1];
+      
+      // Determine AM/PM
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      
+      // Convert 24-hour format hours (0-23) to 12-hour format hours (1-12)
+      if (hours === 0) {
+          hours = 12; // 00:xx becomes 12 AM
+      } else if (hours > 12) {
+          hours = hours - 12; // 13:xx becomes 1 PM, 21:xx becomes 9 PM
+      }
+      
+      // Hours should now be 1-12. No need for two-digit hour here, as modern 12h formats drop leading zero (e.g., 9:00 AM)
+      return `${hours}:${minutes} ${ampm}`;
+    } catch (e) {
+      console.error("Error parsing time string:", timeString, e);
+      return timeString.substring(0, 5); // Fallback to raw HH:MM
+    }
+  };
+
+
   return (
     <div className="text-center animate-fade-in">
       <h1 className="text-5xl font-extrabold text-pink-500 mb-4">Welcome to Lily Spa</h1>
@@ -57,7 +89,7 @@ function HomePage({ navigate, storeInfo }) {
                 <MapPin className="mr-2 text-pink-500"/> {storeInfo.Address}
             </p>
             <p className="flex items-center justify-center text-gray-600">
-                <Clock className="mr-2 text-pink-500"/> Open daily from {storeInfo.OpeningTime} to {storeInfo.ClosingTime}
+                <Clock className="mr-2 text-pink-500"/> Open daily from {formatTime(storeInfo.OpeningTime)} to {formatTime(storeInfo.ClosingTime)}
             </p>
         </div>
       )}

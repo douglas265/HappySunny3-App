@@ -5,6 +5,7 @@ import EmployeeCalendar from './EmployeeCalendar';
 import ScheduleEditor from './ScheduleEditor';
 import EmployeeServicesManager from './EmployeeServicesManager';
 
+
 function EmployeePortal({ user, storeInfo, services }) {
     const [activeTab, setActiveTab] = useState('calendar');
 
