@@ -31,7 +31,7 @@ const Header = ({ user, navigate, handleLogout, isMobileMenuOpen, setIsMobileMen
       <header className="bg-white shadow-md sticky top-0 z-50">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold text-pink-500 cursor-pointer" onClick={() => navigate('home')}>
-            Lily Spa
+            Happy Sunny 3
           </div>
           <div className="hidden md:flex">
             <NavLinks />

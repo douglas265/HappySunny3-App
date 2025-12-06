@@ -18,7 +18,6 @@ import ResetPasswordPage from './components/pages/ResetPasswordPage';
 import EmployeePortal from './components/pages/EmployeePortal';
 import EmployerPortal from './components/pages/EmployerPortal';
 import SettingsPage from './components/pages/SettingsPage';
-import StoreHoursEditor from './components/pages/StoreHoursEditor'; // Add new import here
 
 
 // Centralized API URL

@@ -4,7 +4,6 @@ import AllReservationsCalendar from './AllReservationsCalendar';
 import CustomReservationForm from './CustomReservationForm';
 import ManageServicesPage from './ManageServicesPage';
 import ManageUsersPage from './ManageUsersPage';
-import StoreHoursEditor from './StoreHoursEditor'; // Import the new component
 import { API_URL } from '../../api';
 
 function EmployerPortal({ user, services, therapists, storeInfo, onServicesUpdate, onUsersUpdate }) {
@@ -46,12 +45,6 @@ function EmployerPortal({ user, services, therapists, storeInfo, onServicesUpdat
                         >
                             Manage Users
                         </button>
-                        <button 
-                            onClick={() => setActiveTab('manageHours')}
-                            className={`px-6 py-3 font-semibold ${activeTab === 'manageHours' ? 'border-b-2 border-pink-500 text-pink-500' : 'text-gray-500'}`}
-                        >
-                            Store Hours
-                        </button>
                     </>
                 )}
             </div>
@@ -61,7 +54,6 @@ function EmployerPortal({ user, services, therapists, storeInfo, onServicesUpdat
                 {activeTab === 'customReservation' && <CustomReservationForm services={services} therapists={therapists} />}
                 {isAdmin && activeTab === 'manageServices' && <ManageServicesPage services={services} onServicesUpdate={onServicesUpdate} />}
                 {isAdmin && activeTab === 'manageUsers' && <ManageUsersPage user={user} onUsersUpdate={onUsersUpdate} services={services} />}
-                {isAdmin && activeTab === 'manageHours' && <StoreHoursEditor user={user} storeInfo={storeInfo} />}
             </div>
         </div>
     );
